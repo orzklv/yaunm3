@@ -10,4 +10,5 @@
 
 > [!IMPORTANT]
 > <img src="./.github/assets/animation.gif" alt="">
+> 
 > If you run into issues while compiling & running, please consider leaving issues on this repository. Would be glad to work on them together. 
