@@ -1,6 +1,6 @@
 <header>
 <p align="center">
-  <img src="./.github/assets/animation.gif" alt="header picture" height="188" width="366">
+  <img src="./.github/assets/animation.gif" alt="header picture" height="376" width="732">
 </p>
 
 <h1 style="display: inline">Yaunm3</h1>
