@@ -1,2 +1,1 @@
-# yaunm3
-👺 | Hackass experiments with Flipper Zero
+<img src="./.github/assets/animation.gif" alt="header picture" height="400" align="center">
