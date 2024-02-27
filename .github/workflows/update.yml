@@ -25,7 +25,7 @@ jobs:
         with:
           path: firmware
           repository: flipperdevices/flipperzero-firmware
-          ref: main
+          ref: release_0_98
           fetch-depth: 1
           submodules: 'recursive'
 
