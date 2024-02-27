@@ -1,0 +1,46 @@
+name: Update sub-repositories
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-firmware:
+    name: Update firmware codebase
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    outputs:
+      repo-updated: ${{ steps.git-step.outputs.updated }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Clone firmware
+        uses: actions/checkout@v4
+        with:
+          path: firmware
+          repository: flipperdevices/flipperzero-firmware
+          ref: main
+          fetch-depth: 1
+          submodules: 'recursive'
+
+      - name: Remove unnecessary files
+        run: |
+          rm -rf firmware/.git firmware/.github firmware/.vscode 
+          rm -f firmware/CODE_OF_CONDUCT.md firmware/ firmware/.travis.yml
+          
+      - name: Upload all changes to GIT
+        id: git-step
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add .
+          [[ -z $(git status -uno --porcelain) ]] && echo "No updates detected, no need for push" && exit 0;
+          git commit -m "update timetable $(date -u)"
+          git push origin main --force
+          echo "::set-output name=updated::yes"
