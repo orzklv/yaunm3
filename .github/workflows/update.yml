@@ -32,7 +32,7 @@ jobs:
       - name: Remove unnecessary files
         run: |
           rm -rf firmware/.git firmware/.github firmware/.vscode 
-          rm -f firmware/CODE_OF_CONDUCT.md firmware/ firmware/.travis.yml
+          rm -rf firmware/CODE_OF_CONDUCT.md firmware/ firmware/.travis.yml
           
       - name: Upload all changes to GIT
         id: git-step
