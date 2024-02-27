@@ -59,7 +59,7 @@ jobs:
           done
           
           # Move some of its files
-          mv ./firmware/.github/assets ./.github/assets/
+          mv ./firmware/.github/assets/* ./.github/assets/
           rm -rf ./firmware/.github
           
       - name: Upload all changes to GIT
