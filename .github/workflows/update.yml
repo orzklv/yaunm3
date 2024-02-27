@@ -70,5 +70,5 @@ jobs:
           git add .
           [[ -z $(git status -uno --porcelain) ]] && echo "No updates detected, no need for push" && exit 0;
           git commit -m "update timetable $(date -u)"
-          git push origin main --force
+          git push origin master --force
           echo "::set-output name=updated::yes"
