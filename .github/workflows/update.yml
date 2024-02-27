@@ -31,8 +31,30 @@ jobs:
 
       - name: Remove unnecessary files
         run: |
-          rm -rf firmware/.git firmware/.github firmware/.vscode 
-          rm -rf firmware/CODE_OF_CONDUCT.md firmware/ firmware/.travis.yml
+          # List of files to remove
+          list=(
+            .git
+            .github/ISSUE_TEMPLATE
+            .github/actions
+            .github/workflows
+            .github/CODEOWNERS
+            .github/pull_request_template.md
+            .vscode
+            .editorconfig
+            CODING_STYLE.md
+            CONTRIBUTING.md
+            LICENSE
+            CODE_OF_CONDUCT.md
+          )
+          
+          # Remove files
+          for file in "${list[@]}"; do
+            rm -rf "./firmware/$file"
+          done
+          
+          # List files
+          ls -la
+          ls -la ./firmware
           
       - name: Upload all changes to GIT
         id: git-step
