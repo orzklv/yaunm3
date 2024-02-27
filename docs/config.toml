@@ -1,0 +1,55 @@
+title = "Yaunm3"
+base_url = "https://yaunm3.orzklv.uz"
+description = "Blog about my ongoing flipper zero research."
+
+compile_sass = true
+minify_html = true
+generate_feed = true
+feed_filename = "atom.xml"
+build_search_index = false
+author = "Orzklv"
+
+taxonomies = [
+  {name = "tags", feed = true},
+]
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "solarized-dark", filename = "syntax-theme-dark.css" },
+  { theme = "solarized-light", filename = "syntax-theme-light.css" },
+]
+smart_punctuation = true
+
+[extra]
+primary_color = "#ff7800"
+primary_color_alpha = "rgba(255, 120, 0, 0.2)"
+emoji_favicon = true
+animated_favicon = true
+date_format = "%d %B %Y"
+issues_url = "https://github.com/orzklv/yaunm3/issues"
+source_url = "https://github.com/orzklv/yaunm3"
+# stylesheets = [
+#   "YOUR_STYLE.css",
+#   "ALSO_YOUR_STYLE.css"
+# ]
+
+[extra.nav]
+show_feed = true
+links = [
+  {url = "https://github.com/orzklv/yaunm3", name = "Repo"},
+  {url = "https://orzklv.uz", name = "Author"},
+#  {url = "$BASE_URL/demo", name = "Demo"},
+  {url = "$BASE_URL/blog", name = "Blog"},
+]
+
+[extra.footer]
+show_copyright = true
+show_johnvert = false
+show_powered_by = true
+show_source = false
+
+[extra.comments]
+host = "mstdn.social"
+user = "Daudix"
